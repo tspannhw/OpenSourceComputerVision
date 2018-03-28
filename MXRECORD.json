@@ -1,0 +1,166 @@
+{
+ "type": "record",
+ "name": "MXRECORD",
+ "fields": [
+  {
+   "name": "filename",
+   "type": "string",
+   "doc": "Type inferred from '\"tx1_image_uhh_20180328184728.jpg\"'"
+  },
+  {
+   "name": "top1pct",
+   "type": "string",
+   "doc": "Type inferred from '\"30.0\"'"
+  },
+  {
+   "name": "top5",
+   "type": "string",
+   "doc": "Type inferred from '\"n03126707 crane\"'"
+  },
+  {
+   "name": "top4",
+   "type": "string",
+   "doc": "Type inferred from '\"n03977966 police van, police wagon, paddy wagon, patrol wagon, wagon, black Maria\"'"
+  },
+  {
+   "name": "top3",
+   "type": "string",
+   "doc": "Type inferred from '\"n03417042 garbage truck, dustcart\"'"
+  },
+  {
+   "name": "top2",
+   "type": "string",
+   "doc": "Type inferred from '\"n02930766 cab, hack, taxi, taxicab\"'"
+  },
+  {
+   "name": "top1",
+   "type": "string",
+   "doc": "Type inferred from '\"n02977058 cash machine, cash dispenser, automated teller machine, automatic teller machine, automated teller, automatic teller, ATM\"'"
+  },
+  {
+   "name": "y",
+   "type": "string",
+   "doc": "Type inferred from '\"0\"'"
+  },
+  {
+   "name": "host",
+   "type": "string",
+   "doc": "Type inferred from '\"tegra-ubuntu\"'"
+  },
+  {
+   "name": "h",
+   "type": "string",
+   "doc": "Type inferred from '\"0\"'"
+  },
+  {
+   "name": "top2pct",
+   "type": "string",
+   "doc": "Type inferred from '\"4.8\"'"
+  },
+  {
+   "name": "cputemp",
+   "type": "double",
+   "doc": "Type inferred from '30.0'"
+  },
+  {
+   "name": "endtime",
+   "type": "string",
+   "doc": "Type inferred from '\"2018-03-28 18:47:36\"'"
+  },
+  {
+   "name": "ipaddress",
+   "type": "string",
+   "doc": "Type inferred from '\"192.168.1.190\"'"
+  },
+  {
+   "name": "imagefilename",
+   "type": "string",
+   "doc": "Type inferred from '\"tx1_image_uhh_20180328184728.jpg\"'"
+  },
+  {
+   "name": "top3pct",
+   "type": "string",
+   "doc": "Type inferred from '\"3.7\"'"
+  },
+  {
+   "name": "uuid",
+   "type": "string",
+   "doc": "Type inferred from '\"mxnet_uuid_dcx_20180328184727\"'"
+  },
+  {
+   "name": "facedetect",
+   "type": "string",
+   "doc": "Type inferred from '\"[GIE] layer network time - 28.215418 ms|detectnet-console: finished processing network (1522262852823)|0 bounding boxes detected|detectnet-console: writing 640x480 image to '/media/nvidia/96ed93f9-7c40-4999-85ba-3eb24262d0a5/images/fcout-tx1_image_uhh_20180328184728.jpg'|detectnet-console: successfully wrote 640x480 image to '/media/nvidia/96ed93f9-7c40-4999-85ba-3eb24262d0a5/images/fcout-tx1_image_uhh_20180328184728.jpg'||shutting down...|\"'"
+  },
+  {
+   "name": "diskfree",
+   "type": "string",
+   "doc": "Type inferred from '\"2931.8 MB\"'"
+  },
+  {
+   "name": "cvfilename",
+   "type": "string",
+   "doc": "Type inferred from '\"\"'"
+  },
+  {
+   "name": "ts",
+   "type": "string",
+   "doc": "Type inferred from '\"2018-03-28 18:47:26\"'"
+  },
+  {
+   "name": "top4pct",
+   "type": "string",
+   "doc": "Type inferred from '\"3.5\"'"
+  },
+  {
+   "name": "gputempf",
+   "type": "string",
+   "doc": "Type inferred from '\"73.0\"'"
+  },
+  {
+   "name": "gputemp",
+   "type": "string",
+   "doc": "Type inferred from '\"22.5\"'"
+  },
+  {
+   "name": "top5pct",
+   "type": "string",
+   "doc": "Type inferred from '\"2.5\"'"
+  },
+  {
+   "name": "w",
+   "type": "string",
+   "doc": "Type inferred from '\"0\"'"
+  },
+  {
+   "name": "memory",
+   "type": "double",
+   "doc": "Type inferred from '29.7'"
+  },
+  {
+   "name": "imagenet",
+   "type": "string",
+   "doc": "Type inferred from '\"class 0481 - 0.039276 (cassette)|class 0482 - 0.025558 (cassette player)|class 0492 - 0.028412 (chest)|class 0519 - 0.016373 (crate)|class 0530 - 0.047028 (digital clock)|class 0531 - 0.021957 (digital watch)|class 0579 - 0.018341 (grand piano, grand)|class 0598 - 0.034119 (home theater, home theatre)|class 0613 - 0.015030 (joystick)|class 0620 - 0.012413 (laptop, laptop computer)|class 0632 - 0.021866 (loudspeaker, speaker, speaker unit, loudspeaker system, speaker system)|class 0662 - 0.010910 (modem)|class 0710 - 0.012657 (pencil sharpener)|class 0713 - 0.010574 (photocopier)|class 0732 - 0.043488 (Polaroid camera, Polaroid Land camera)|class 0742 - 0.038239 (printer)|class 0745 - 0.063049 (projector)|class 0754 - 0.014793 (radio, wireless)|class 0761 - 0.013901 (remote control, remote)|class 0848 - 0.031204 (tape player)|class 0851 - 0.045227 (television, television system)|class 0882 - 0.017990 (vacuum, vacuum cleaner)|imagenet-console: '/media/nvidia/96ed93f9-7c40-4999-85ba-3eb24262d0a5/images/tx1_image_uhh_20180328184728.jpg' -> 6.30493% class #745 (projector)|loaded image fontmapA.png (256 x 512) 2097152 bytes|[cuda] cudaAllocMapped 2097152 bytes, CPU 0x101500000 GPU 0x101500000|[cuda] cudaAllocMapped 8192 bytes, CPU 0x100e22000 GPU 0x100e22000|imagenet-console: attempting to save output image to '/media/nvidia/96ed93f9-7c40-4999-85ba-3eb24262d0a5/images/cfout-tx1_image_uhh_20180328184728.jpg'|imagenet-console: completed saving '/media/nvidia/96ed93f9-7c40-4999-85ba-3eb24262d0a5/images/cfout-tx1_image_uhh_20180328184728.jpg'||shutting down...|\"'"
+  },
+  {
+   "name": "x",
+   "type": "string",
+   "doc": "Type inferred from '\"0\"'"
+  },
+  {
+   "name": "cvface",
+   "type": "string",
+   "doc": "Type inferred from '\"\"'"
+  },
+  {
+   "name": "runtime",
+   "type": "string",
+   "doc": "Type inferred from '\"9.0\"'"
+  },
+  {
+   "name": "cputempf",
+   "type": "string",
+   "doc": "Type inferred from '\"78.0\"'"
+  }
+ ]
+}
