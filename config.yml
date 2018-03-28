@@ -1,0 +1,169 @@
+MiNiFi Config Version: 3
+Flow Controller:
+  name: MiniFiSenseHatDevieFlowMiniFiTimers
+  comment: ''
+Core Properties:
+  flow controller graceful shutdown period: 10 sec
+  flow service write delay interval: 500 ms
+  administrative yield duration: 30 sec
+  bored yield duration: 10 millis
+  max concurrent threads: 1
+  variable registry properties: ''
+FlowFile Repository:
+  partitions: 256
+  checkpoint interval: 2 mins
+  always sync: false
+  Swap:
+    threshold: 20000
+    in period: 5 sec
+    in threads: 1
+    out period: 5 sec
+    out threads: 4
+Content Repository:
+  content claim max appendable size: 10 MB
+  content claim max flow files: 100
+  always sync: false
+Provenance Repository:
+  provenance rollover time: 1 min
+  implementation: org.apache.nifi.provenance.MiNiFiPersistentProvenanceRepository
+Component Status Repository:
+  buffer size: 1440
+  snapshot frequency: 1 min
+Security Properties:
+  keystore: ''
+  keystore type: ''
+  keystore password: ''
+  key password: ''
+  truststore: ''
+  truststore type: ''
+  truststore password: ''
+  ssl protocol: ''
+  Sensitive Props:
+    key:
+    algorithm: PBEWITHMD5AND256BITAES-CBC-OPENSSL
+    provider: BC
+Processors: []
+Controller Services: []
+Process Groups:
+- id: f828c0b4-3a39-3d1b-0000-000000000000
+  name: Movidius Sensehat Device Flow MiniFi
+  Processors:
+  - id: 630180d0-6e3b-3dd2-0000-000000000000
+    name: Capture Photo and NCS Image Classifier
+    class: org.apache.nifi.processors.standard.ExecuteProcess
+    max concurrent tasks: 1
+    scheduling strategy: CRON_DRIVEN
+    scheduling period: 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,47,50,52,54,56,58 * * * * ?
+    penalization period: 30 sec
+    yield period: 1 sec
+    run duration nanos: 0
+    auto-terminated relationships list: []
+    Properties:
+      Argument Delimiter: ' '
+      Batch Duration:
+      Command: /opt/demo/run2.sh
+      Command Arguments:
+      Redirect Error Stream: 'false'
+      Working Directory:
+  - id: 359adfdb-2393-3b49-0000-000000000000
+    name: Capture Photo and TensorFlow
+    class: org.apache.nifi.processors.standard.ExecuteProcess
+    max concurrent tasks: 1
+    scheduling strategy: CRON_DRIVEN
+    scheduling period: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59 * * * * ?
+    penalization period: 30 sec
+    yield period: 1 sec
+    run duration nanos: 0
+    auto-terminated relationships list: []
+    Properties:
+      Argument Delimiter: ' '
+      Batch Duration:
+      Command: /opt/demo/run3.sh
+      Command Arguments:
+      Redirect Error Stream: 'false'
+      Working Directory:
+  - id: d24ff86a-530a-3617-0000-000000000000
+    name: GetFile
+    class: org.apache.nifi.processors.standard.GetFile
+    max concurrent tasks: 1
+    scheduling strategy: TIMER_DRIVEN
+    scheduling period: 30 sec
+    penalization period: 30 sec
+    yield period: 1 sec
+    run duration nanos: 0
+    auto-terminated relationships list: []
+    Properties:
+      Batch Size: '10'
+      File Filter: '[^\.].*'
+      Ignore Hidden Files: 'false'
+      Input Directory: /opt/demo/images/
+      Keep Source File: 'false'
+      Maximum File Age:
+      Maximum File Size:
+      Minimum File Age: 90 sec
+      Minimum File Size: 120 B
+      Path Filter:
+      Polling Interval: 0 sec
+      Recurse Subdirectories: 'true'
+  Controller Services: []
+  Process Groups: []
+  Input Ports: []
+  Output Ports: []
+  Funnels: []
+  Connections:
+  - id: 2bde6057-2014-3456-0000-000000000000
+    name: Capture Photo and NCS Image Classifier/success/e3af35aa-c8a9-189e-40e8-6170aeb5eff6
+    source id: 630180d0-6e3b-3dd2-0000-000000000000
+    source relationship names:
+    - success
+    destination id: e3af35aa-c8a9-189e-40e8-6170aeb5eff6
+    max work queue size: 10000
+    max work queue data size: 1 GB
+    flowfile expiration: 0 sec
+    queue prioritizer class: ''
+  - id: 0a79b384-a17a-3ac2-0000-000000000000
+    name: Capture Photo and TensorFlow/success/e3af35aa-c8a9-189e-40e8-6170aeb5eff6
+    source id: 359adfdb-2393-3b49-0000-000000000000
+    source relationship names:
+    - success
+    destination id: e3af35aa-c8a9-189e-40e8-6170aeb5eff6
+    max work queue size: 10000
+    max work queue data size: 1 GB
+    flowfile expiration: 0 sec
+    queue prioritizer class: ''
+  - id: ce29f4f8-d06e-31d2-0000-000000000000
+    name: GetFile/success/e3af35aa-c8a9-189e-40e8-6170aeb5eff6
+    source id: d24ff86a-530a-3617-0000-000000000000
+    source relationship names:
+    - success
+    destination id: e3af35aa-c8a9-189e-40e8-6170aeb5eff6
+    max work queue size: 10000
+    max work queue data size: 1 GB
+    flowfile expiration: 0 sec
+    queue prioritizer class: ''
+  Remote Process Groups:
+  - id: ba036c2c-9b89-3494-0000-000000000000
+    name: ''
+    url: http://hw13125.local:8080/nifi
+    comment: ''
+    timeout: 60 sec
+    yield period: 10 sec
+    transport protocol: HTTP
+    proxy host: ''
+    proxy port: ''
+    proxy user: ''
+    proxy password: ''
+    local network interface: ''
+    Input Ports:
+    - id: e3af35aa-c8a9-189e-40e8-6170aeb5eff6
+      name: Movidius Input
+      comment: ''
+      max concurrent tasks: 1
+      use compression: false
+    Output Ports: []
+Input Ports: []
+Output Ports: []
+Funnels: []
+Connections: []
+Remote Process Groups: []
+NiFi Properties Overrides: {}
