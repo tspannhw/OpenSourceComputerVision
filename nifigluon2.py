@@ -98,8 +98,8 @@ try:
     #print(json_string)
     # MQTT
     client = mqtt.Client()
-    client.username_pw_set("zvrxunpj","5Ox2ZIbLor7z")
-    client.connect("m13.cloudmqtt.com", 17769, 60)
+    client.username_pw_set("user","pass")
+    client.connect("server", 17769, 60)
     client.publish("gluon", payload=json_string, qos=0, retain=True)
 except:
     print("{\"message\": \"Failed to run\"}")
