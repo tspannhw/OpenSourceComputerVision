@@ -1,0 +1,5 @@
+{"imgname": "images/gluoncv_image_20180615203615_c83fed6f-2ec8-4841-97e3-40985f7859ad.jpg", 
+"host": "HW13125.local", "shape": "(1, 3, 512, 910)", "end": "1529094976.237143", 
+"te": "1.8907802104949951", "battery": 100, "systemtime": "06/15/2018 16:36:16", 
+"cpu": 29.3, "diskusage": "112008.6 MB", "memory": 66.5,
+"id": "20180615203615_c83fed6f-2ec8-4841-97e3-40985f7859ad"}
